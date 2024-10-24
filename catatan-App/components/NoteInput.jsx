@@ -32,6 +32,12 @@ function NoteInput({addNote}){
             required
             />
             <p>Karakter yang Tersisa : {titleLimit}</p>
+           <textarea 
+           value={body}
+           onChange={(event) => setBody(event.target.value)}
+           placeholder='Body'
+           required
+           />
         </form>
     )
 };
