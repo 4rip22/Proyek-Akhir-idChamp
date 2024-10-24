@@ -38,6 +38,7 @@ function NoteInput({addNote}){
            placeholder='Body'
            required
            />
+           <button type='submit'>Add Note</button>
         </form>
     )
 };
