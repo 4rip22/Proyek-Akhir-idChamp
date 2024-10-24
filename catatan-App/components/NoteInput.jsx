@@ -31,6 +31,7 @@ function NoteInput({addNote}){
             placeholder='Title'
             required
             />
+            <p>Karakter yang Tersisa : {titleLimit}</p>
         </form>
     )
 };
