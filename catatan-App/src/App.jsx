@@ -13,3 +13,22 @@ const initialNodes = [
         createdAt: '2022-04-14T04:27:34.572Z'
       },
 ]
+
+function App(){
+    const [notes, setNotes] = useState(initialNotes);
+    const [searchQuery, setSearchQuery] = useState('');
+
+    const addNote = (note) => {
+        setNotes([...notes, {...note,id: +new Date()}]);
+    }
+    const deleteNote = (id) => {
+        setNotes([...notes.filter(note => note.id !== id)]);
+    }
+    const toggleArchive = (id) => {
+        setNotes(
+            notes.map(note => {
+                note.id === id ? {...note,archived: !note.archived} : note
+            })
+        );
+    };
+};
