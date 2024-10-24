@@ -23,5 +23,16 @@ function NoteInput({addNote}){
             setTitleLimit(50 - event.target.value.length);
         }
     }
+    return (
+        <form onSubmit ={handleSubmit}>
+            <input type="text" 
+            value={title}
+            onChange={handleTitleChange}
+            placeholder='Title'
+            required
+            />
+        </form>
+    )
 };
+
 export default NoteInput;
