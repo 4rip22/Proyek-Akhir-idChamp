@@ -39,6 +39,7 @@ return (
     <div className="App">
         <h1>Catatan Pribadi</h1>
         <NoteSearch setSearchQuery={setSearchQuery}/>
+        <NoteInput addNote={addNote}/>
     </div>
 )
 export default App;
