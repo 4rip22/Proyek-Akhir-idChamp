@@ -31,11 +31,8 @@ function App(){
             })
         );
     };
-    const Searchadd = (note => {
-        setSearchQuery(
-            
-        )
-
-    })
+    const filteredNodes = notes.filter(note => {
+        note.title.toLowerCase().includes(searchQuery.toLowerCase())
+    });
 };
 export default App;
