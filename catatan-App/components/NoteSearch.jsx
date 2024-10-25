@@ -7,7 +7,7 @@ function NoteSearch({setSearchQuery}){
     return (
         <input 
         type="text" 
-        placeholder="cari Catatan...."
+        placeholder="Cari Catatan........."
         onChange={handleSearch}
         />
     )

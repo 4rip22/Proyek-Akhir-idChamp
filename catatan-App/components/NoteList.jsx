@@ -21,7 +21,7 @@ function NoteList({notes,onDelete,onArchive}) {
                 </div>
             ) : <p>Tidak ada catatan aktif</p>}
         
-            <h2>Catatan Arsipkan</h2>  
+            <h2>Catatan Diarsipkan</h2>  
             {archivedNotes.length > 0 ? (
                 <div className="note-list">
                     {activeNotes.map(note => (
