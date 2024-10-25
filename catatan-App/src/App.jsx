@@ -15,7 +15,7 @@ const initialNodes = [
 ]
 
 function App(){
-    const [notes, setNotes] = useState(initialNotes);
+    const [notes, setNotes] = useState(initialNodes);
     const [searchQuery, setSearchQuery] = useState('');
 
     const addNote = (note) => {
@@ -31,4 +31,11 @@ function App(){
             })
         );
     };
+    const Searchadd = (note => {
+        setSearchQuery(
+            
+        )
+
+    })
 };
+export default App;
