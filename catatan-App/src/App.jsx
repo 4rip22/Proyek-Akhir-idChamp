@@ -35,4 +35,10 @@ function App(){
         note.title.toLowerCase().includes(searchQuery.toLowerCase())
     });
 };
+return (
+    <div className="App">
+        <h1>Catatan Pribadi</h1>
+        <NoteSearch setSearchQuery={setSearchQuery}/>
+    </div>
+)
 export default App;
