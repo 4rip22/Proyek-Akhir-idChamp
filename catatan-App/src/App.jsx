@@ -31,15 +31,21 @@ function App(){
             })
         );
     };
-    const filteredNodes = notes.filter(note => {
+    const filteredNodes = notes.filter(note => 
         note.title.toLowerCase().includes(searchQuery.toLowerCase())
-    });
+    );
+    return (
+        <div className="App">
+            <h1>Catatan Pribadi</h1>
+            <NoteSearch setSearchQuery={setSearchQuery}/>
+            <NoteInput addNote={addNote}/>
+            <NodeList
+            notes={filteredNodes}
+            onDelete={deleteNote}
+            onArchive={toggleArchive}
+            />
+        </div>
+    )
 };
-return (
-    <div className="App">
-        <h1>Catatan Pribadi</h1>
-        <NoteSearch setSearchQuery={setSearchQuery}/>
-        <NoteInput addNote={addNote}/>
-    </div>
-)
+
 export default App;
