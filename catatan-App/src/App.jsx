@@ -1,28 +1,13 @@
+// App.js
 import React, { useState } from 'react';
 import NoteInput from '../components/NoteInput';
 import NoteList from '../components/NoteList';
 import NoteSearch from '../components/NoteSearch';
+import { getInitialData  } from '../src/utils/data';
 import '../styles/style.css';
 
-const initialNotes = [
-  {
-    id: 1,
-    title: "Babel",
-    body: "Babel merupakan tools open-source yang digunakan untuk mengubah sintaks ECMAScript 2015+ menjadi sintaks yang didukung oleh JavaScript engine versi lama. Babel sering dipakai ketika kita menggunakan sintaks terbaru termasuk sintaks JSX.",
-    archived: false,
-    createdAt: '2022-04-14T04:27:34.572Z',
-  },
-  {
-    id: 2,
-    title:"idcamp x dicoding",
-    body: "Project ini adalah project terakhir saya dalam menyelesaikan kelas React Fundamental pada dicoding.",
-    archived: false,
-    createdAt: '2024-10-15T04:15:25.572Z',
-  }
-];
-
 function App() {
-  const [notes, setNotes] = useState(initialNotes);
+  const [notes, setNotes] = useState(getInitialData );
   const [searchQuery, setSearchQuery] = useState('');
 
   const addNote = (note) => {
