@@ -3,15 +3,18 @@ import React, { useState } from 'react';
 import NoteInput from '../components/NoteInput';
 import NoteList from '../components/NoteList';
 import NoteSearch from '../components/NoteSearch';
-import { getInitialData  } from '../src/utils/data';
+import { getInitialData, showFormattedDate } from '../src/utils/data'; 
 import '../styles/style.css';
 
 function App() {
-  const [notes, setNotes] = useState(getInitialData );
+  const [notes, setNotes] = useState(getInitialData()); 
   const [searchQuery, setSearchQuery] = useState('');
 
   const addNote = (note) => {
-    setNotes([...notes, { ...note, id: +new Date() }]);
+    setNotes([
+      ...notes,
+      { ...note, id: +new Date(), createdAt: new Date().toISOString() }
+    ]);
   };
 
   const deleteNote = (id) => {
@@ -26,7 +29,7 @@ function App() {
     );
   };
 
-  const filteredNotes = notes.filter(note => 
+  const filteredNotes = notes.filter(note =>
     note.title.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
@@ -39,6 +42,7 @@ function App() {
         notes={filteredNotes} 
         onDelete={deleteNote} 
         onArchive={toggleArchive} 
+        formatDate={showFormattedDate} 
       />
     </div>
   );
