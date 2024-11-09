@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 
 function NoteInput({addNote}){
-    const [title, setTitle] = useState('')
-    const [body, setBody] = useState('')
+    const [title, setTitle] = useState('');
+    const [body, setBody] = useState('');
     const [titleLimit,setTitleLimit] = useState(50);
 
     const handleSubmit = (event) => {
@@ -21,7 +21,7 @@ function NoteInput({addNote}){
         if(event.target.value.length <= 50){
             setTitle(event.target.value);
             setTitleLimit(50 - event.target.value.length);
-        }
+        };
     }
     return (
         <form onSubmit ={handleSubmit}>
